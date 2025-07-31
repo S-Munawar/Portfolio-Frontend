@@ -144,49 +144,67 @@ const pages = document.querySelectorAll("[data-page]");
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");        'use strict';
-        // …existing code…
-        
-        // — Contact form → open WhatsApp chat with prefilled message —
-        const form = document.querySelector('[data-form]');
-        const inputs = document.querySelectorAll('[data-form-input]');
-        const formBtn = document.querySelector('[data-form-btn]');
-        
-        // enable button only when all fields have content
-        inputs.forEach(input => {
-          input.addEventListener('input', () => {
-            formBtn.disabled = ![...inputs].every(i => i.value.trim() !== '');
-          });
-        });
-        
-        form.addEventListener('submit', e => {
-          e.preventDefault();
-          // gather form values
-          const name = form.elements['fullname'].value.trim();
-          const email = form.elements['email'].value.trim();
-          const message = form.elements['message'].value.trim();
-          // your WhatsApp number in international format (no + or dashes)
-          const phone = '916303774539';
-          // build the text and encode
-          const text = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
-          const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-          // open WhatsApp chat
-          window.open(url, '_blank');
-          // reset form
-          form.reset();
-          formBtn.disabled = true;
-        });
-        
-        // …existing code…
-        navigationLinks[i].classList.add("active");
+    for (let j = 0; j < pages.length; j++) {
+      if (this.innerHTML.toLowerCase() === pages[j].dataset.page) {
+        pages[j].classList.add("active");
+        this.classList.add("active");
         window.scrollTo(0, 0);
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        pages[j].classList.remove("active");
+        navigationLinks[j].classList.remove("active");
       }
     }
 
   });
 }
+
+// Contact form WhatsApp integration
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('[data-form]');
+  const inputs = document.querySelectorAll('[data-form-input]');
+  const formBtn = document.querySelector('[data-form-btn]');
+  
+  // enable button only when all fields have content
+  if (inputs.length > 0) {
+    inputs.forEach(input => {
+      input.addEventListener('input', () => {
+        formBtn.disabled = ![...inputs].every(i => i.value.trim() !== '');
+      });
+    });
+  }
+  
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // gather form values
+      const name = form.elements['fullname'].value.trim();
+      const email = form.elements['email'].value.trim();
+      const message = form.elements['message'].value.trim();
+      // your WhatsApp number in international format (no + or dashes)
+      const phone = '916303774539';
+      // build the text and encode
+      const text = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      // open WhatsApp chat
+      window.open(url, '_blank');
+      // reset form
+      form.reset();
+      formBtn.disabled = true;
+    });
+  }
+});
+
+// Script to trigger the hidden Razorpay button when our custom button is clicked
+document.addEventListener('DOMContentLoaded', function() {
+  const customBtn = document.getElementById('custom-razorpay-btn');
+
+    customBtn.addEventListener('click', function() {
+      // Short delay to ensure Razorpay script is loaded
+      setTimeout(function() {
+        const razorpayBtn = document.querySelector('.razorpay-payment-button');
+        if (razorpayBtn) {
+          razorpayBtn.click();
+        }
+      }, 100);
+    });
+  });
