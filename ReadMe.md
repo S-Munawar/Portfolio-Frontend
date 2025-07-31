@@ -2,19 +2,9 @@
 
 A modern, responsive personal portfolio website showcasing my journey as a full-stack developer and AI enthusiast. Built with cutting-edge web technologies and featuring an elegant dark theme with golden accents.
 
-![Portfolio Preview](./website-demo-image/desktop.png)
-
 ## ✨ Live Demo
 
-🌐 **[View Live Portfolio](https://fr0zen-x.github.io/Portfolio/)**
-
-## 📱 Preview
-
-<div align="center">
-  <img src="./website-demo-image/desktop.png" alt="Desktop Preview" width="600"/>
-  <br/>
-  <img src="./website-demo-image/mobile.png" alt="Mobile Preview" width="300"/>
-</div>
+🌐 **[View Live Portfolio](https://s-munawar.github.io/Portfolio/)**
 
 ## 🎯 Features
 
@@ -84,7 +74,7 @@ A modern, responsive personal portfolio website showcasing my journey as a full-
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/FR0ZEN-x/Portfolio.git
+   git clone https://github.com/s-munawar/Portfolio.git
    ```
 
 2. **Navigate to project directory**
@@ -225,13 +215,7 @@ This project is licensed under the MIT License - see the [License](License) file
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaik-abdul-munawar-b35821284/)
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/shaik_munawar_/)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/shaikmunawar._/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/FR0ZEN-x)
-
-### 📧 Contact Information
-
-- **Email**: shaikmunawar907@gmail.com
-- **Phone**: +91 6303774539
-- **Location**: Asif Nagar, Hyderabad, India
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/s-munawar)
 
 ---
 
