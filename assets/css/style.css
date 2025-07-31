@@ -427,36 +427,118 @@ main {
   gap: 15px;
 }
 
-/* give avatar a default square size and crop overflow */
+/* Enhanced avatar with premium styling */
 .avatar-box {
-  width:   80px;
-  height:  80px;
+  width: 80px;
+  height: 80px;
   overflow: hidden;
-  background: var(--bg-gradient-onyx);
+  background: var(--border-gradient-onyx);
   border-radius: 20px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4),
+              0 4px 15px rgba(255, 183, 3, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: 3px;
+}
+
+.avatar-box::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: var(--bg-gradient-jet);
+  border-radius: 17px;
+  z-index: -1;
+}
+
+.avatar-box::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, 
+    var(--orange-yellow-crayola), 
+    transparent, 
+    var(--orange-yellow-crayola));
+  border-radius: 24px;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.avatar-box:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5),
+              0 8px 25px rgba(255, 183, 3, 0.2),
+              inset 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+.avatar-box:hover::after {
+  opacity: 0.6;
 }
 
 .avatar-box img {
-  width:  100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: inherit;
+  border-radius: 17px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.avatar-box:hover img {
+  transform: scale(1.02);
+  filter: brightness(1.1) contrast(1.1);
 }
 
 /* bump up on medium screens */
 @media (min-width: 580px) {
   .avatar-box {
-    width:  120px;
+    width: 120px;
     height: 120px;
     border-radius: 30px;
+    padding: 4px;
+  }
+  
+  .avatar-box::before {
+    border-radius: 26px;
+  }
+  
+  .avatar-box::after {
+    border-radius: 34px;
+  }
+  
+  .avatar-box img {
+    border-radius: 26px;
   }
 }
 
 /* on extra‑wide screens you can go even larger */
 @media (min-width: 1250px) {
   .avatar-box {
-    width:  150px;
+    width: 150px;
     height: 150px;
+    border-radius: 35px;
+    padding: 5px;
+  }
+  
+  .avatar-box::before {
+    border-radius: 30px;
+  }
+  
+  .avatar-box::after {
+    border-radius: 40px;
+  }
+  
+  .avatar-box img {
+    border-radius: 30px;
+  }
+  
+  .avatar-box:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6),
+                0 12px 35px rgba(255, 183, 3, 0.25),
+                inset 0 3px 0 rgba(255, 255, 255, 0.25);
   }
 }
 .info-content .name {
