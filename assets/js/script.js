@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const form = document.querySelector('[data-form]');
   const inputs = document.querySelectorAll('[data-form-input]');
   const formBtn = document.querySelector('[data-form-btn]');
-  
+
   // enable button only when all fields have content
   if (inputs.length > 0) {
     inputs.forEach(input => {
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
-  
+
   if (form) {
     form.addEventListener('submit', e => {
       e.preventDefault();

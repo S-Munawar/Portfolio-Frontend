@@ -804,7 +804,7 @@ main {
 .service-item-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
-  font-weight: var(--fw-3);
+  font-weight: var(--fw-300);
   line-height: 1.6;
 }
 
@@ -885,7 +885,7 @@ main {
   border-radius: 16px;
   padding: 1px;
   background: linear-gradient(45deg, var(--orange-yellow-crayola), transparent, var(--orange-yellow-crayola));
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff);
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -966,7 +966,7 @@ main {
 .testimonials-item-title {
   margin-top: 0;
   margin-left: 6rem;
-  background: linear-gradient(135deg, var(--white), var(--orange-yellow-crayola));
+  background: linear-gradient(135deg, var(--white-2), var(--orange-yellow-crayola));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -974,7 +974,7 @@ main {
 }
 
 .testimonials-item:hover .testimonials-item-title {
-  background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--white));
+  background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--white-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1358,7 +1358,7 @@ main {
 .tech-stack-item-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--text-color); /* Ensure title has good contrast */
+  color: var(--white-2); /* Ensure title has good contrast */
 }
 
 /* Responsive Design for smaller screens */
@@ -1693,7 +1693,7 @@ main {
   margin-bottom: 10px;
   line-height: 1.3;
   transition: var(--transition-1);
-  background: linear-gradient(135deg, var(--white), var(--light-gray));
+  background: linear-gradient(135deg, var(--white-2), var(--light-gray));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
